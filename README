@@ -1,0 +1,84 @@
+/** RationalNumber class performs basic arethmetic operations or rational number fractions*/
+
+public class RationalNumber {
+  private int numerator;
+	private int denominator;
+
+	public RationalNumber() {
+		this.setNumerator((int) 0);
+		this.setDenominator((int) 0);
+	}
+	public RationalNumber(int numer, int denom) {
+		this.setNumerator(numer);
+		this.setDenominator(denom);
+	}
+	public int getNumerator() {
+		return numerator;
+	}
+	public int getDenominator() {
+		return denominator;
+	}
+	public void setNumerator(int numer) {
+		numerator = numer;
+	}
+	public void setDenominator(int denom) {
+		if (denom < 0) {
+			denom *=-1;
+			this.setnumerator(this.getnumerator() * -1)
+		}
+		denominator = denom;
+	}
+	public RationalNumber perform(String operation, RationalNumber rn) {
+		if (operation.equals("add")) {
+			int x1 = numerator * rn.getDenominator();
+			int x2 = denominator * rn.getNumerator();
+			int y = denominator * rn.getDenominator();
+			RationalNumber result = new RationalNumber(x1+x2,y);
+		}
+		else if (operation.equals("sub")) {
+			int x1 = numerator * rn.getDenominator();
+			int x2 = denominator * rn.getNumerator();
+			int y = denominator * rn.getDenominator();
+			RationalNumber result = new RationalNumber(x1-x2,y);
+		}
+		else if (operation.equals("mult")) {
+			int x = numerator * rn.getNumerator();
+			int y = demoninator * rn.getDenominator();
+			RationalNumber result = new RationalNumber(x,y);
+		}
+		else if (operation.equals("div")) {
+			int x = numerator * rn.getDenominator();
+			int y = denominator * rn.getNumerator();
+			RationalNumber result = new RationalNumber(x,y);
+		}
+		else {
+			System.out.println ("0/0");
+			return (new RationalNumber(0,0);
+		}
+	}
+	public RationalNumber addRational(RationalNumber rn) {
+		int x1 = numerator * rn.getDenominator();
+		int x2 = denominator * rn.getNumerator();
+		int y = denominator * rn.getDenominator();
+		RationalNumber result = new RationalNumber(x1+x2,y);
+	}
+	public RationalNumber subRational(RationalNumber rn) {
+		int x1 = numerator * rn.getDenominator();
+		int x2 = denominator * rn.getNumerator();
+		int y = denominator * rn.getDenominator();
+		RationalNumber result = new RationalNumber(x1-x2,y);
+	}
+	public RationalNumber multRational(RationalNumber rn) {
+		int x = numerator * rn.getNumerator();
+		int y = demoninator * rn.getDenominator();
+		RationalNumber result = new RationalNumber(x,y);
+	}
+	public RationalNumber divRational(RationalNumber) {
+		int x = numerator * rn.getDenominator();
+		int y = denominator * rn.getNumerator();
+		RationalNumber result = new RationalNumber(x,y);
+	}
+	@Override public String toString() {
+		return (numerator + "/" + denominator);
+	}
+}
